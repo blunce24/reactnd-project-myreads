@@ -1,6 +1,12 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 class ListBooks extends Component {
+  static propTypes = {
+   onChangeShelf: PropTypes.func.isRequired,
+   books: PropTypes.array.isRequired
+  }
+
   render() {
     const { books, onChangeShelf } = this.props
 
@@ -23,7 +29,7 @@ class ListBooks extends Component {
                   </div>
                 </div>
                 <div className="book-title">{book.title}</div>
-                <div className="book-authors">{book.authors}</div>
+                <div className="book-authors">{book.authors[0]}</div>
               </div>
             </li>
           )}
