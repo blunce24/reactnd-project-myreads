@@ -1,8 +1,13 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import ListBooks from './ListBooks'
+import PropTypes from 'prop-types'
 
 class MainPage extends Component {
+  static propTypes = {
+   updateBook: PropTypes.func.isRequired,
+   books: PropTypes.array.isRequired
+  }
 
   render() {
     return (
